@@ -1,0 +1,74 @@
+2026-04-23 01:17:41,136 - main - INFO - === Logging system initialized ===
+2026-04-23 01:17:41,136 - main - INFO - Log file: logs/app_20260423_011741.log
+2026-04-23 01:17:41,137 - main - INFO - Log level: INFO
+2026-04-23 01:17:41,137 - main - INFO - Timestamp: 20260423_011741
+2026-04-23 01:17:42,175 - main - INFO - Included router: routers.aihub.router
+2026-04-23 01:17:42,196 - main - INFO - Included router: routers.auth.router
+2026-04-23 01:17:42,199 - main - INFO - Included router: routers.health.router
+2026-04-23 01:17:42,202 - main - INFO - Included router: routers.migrate.router
+2026-04-23 01:17:42,224 - main - INFO - Included router: routers.settings.router
+2026-04-23 01:17:42,262 - main - INFO - Included router: routers.storage.router
+2026-04-23 01:17:42,271 - main - INFO - Included router: routers.user.router
+2026-04-23 01:17:42,322 - main - INFO - Included router: routers.vocabulary_words.router
+2026-04-23 01:17:42,323 - main - INFO - === Application startup initiated ===
+2026-04-23 01:17:42,324 - services.database - INFO - Ignore creating tables
+2026-04-23 01:17:42,324 - services.mock_data - INFO - Ignore initialize data
+2026-04-23 01:17:42,325 - services.auth - INFO - Ignore initialize admin
+2026-04-23 01:17:42,325 - main - INFO - === Application startup completed successfully ===
+2026-04-23 01:17:47,264 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-23 01:17:47,264 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-23 01:17:47,272 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:17:47,637 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:17:47,638 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:17:47,638 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-23 01:17:47,638 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-23 01:17:47,638 - core.database - INFO - Starting database initialization...
+2026-04-23 01:17:47,638 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-23 01:17:47,638 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-23 01:17:47,640 - core.database - INFO - Creating async database engine...
+2026-04-23 01:17:47,640 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-23 01:17:47,688 - core.database - INFO - Database engine created successfully
+2026-04-23 01:17:47,688 - core.database - INFO - Creating async session maker...
+2026-04-23 01:17:47,689 - core.database - INFO - Async session maker created successfully
+2026-04-23 01:17:47,689 - core.database - INFO - Database connection initialized successfully
+2026-04-23 01:17:47,689 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-23 01:17:47,689 - core.database - INFO - 🔧 Starting table creation...
+2026-04-23 01:17:49,053 - core.database - INFO - Tables initialized successfully
+2026-04-23 01:17:49,054 - core.database - DEBUG - [DB_OP] Create tables completed in 1.3649s
+2026-04-23 01:17:49,117 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-23 01:17:49,118 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.4800s
+2026-04-23 01:17:49,118 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:17:49,700 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:17:49,705 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.0676s
+2026-04-23 01:19:52,918 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:19:53,326 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:19:53,326 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:19:53,327 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-23 01:19:53,327 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:19:53,707 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:19:53,708 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3814s
+2026-04-23 01:20:05,691 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:20:05,693 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:20:05,694 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:20:05,694 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-23 01:20:05,695 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:20:06,076 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:20:06,077 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3832s
+2026-04-23 01:20:06,409 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:20:06,410 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:20:06,410 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-23 01:20:06,411 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:20:06,885 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:20:06,898 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4879s
+2026-04-23 01:20:50,627 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 01:20:52,301 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:20:52,644 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:20:52,644 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:20:52,644 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 01:20:52,645 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:20:53,024 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:20:53,025 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3811s
+2026-04-23 01:21:29,240 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-23 01:21:29,306 - core.database - INFO - Database connection closed and engine disposed
+2026-04-23 01:21:29,307 - services.database - INFO - Database connections closed
+2026-04-23 01:21:29,307 - services.database - DEBUG - [DB_OP] Database close completed in 0.0669s

@@ -1,0 +1,39 @@
+{
+    "title": "grammar_rules",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User ID"
+        },
+        "rule_name": {
+            "type": "string",
+            "description": "Name of the grammar rule in Russian or German"
+        },
+        "explanation_ru": {
+            "type": "string",
+            "description": "Explanation in Russian"
+        },
+        "explanation_kz": {
+            "type": "string",
+            "description": "Explanation in Kazakh"
+        },
+        "examples": {
+            "type": "string",
+            "description": "German examples separated by newlines"
+        },
+        "category": {
+            "type": "string",
+            "description": "Rule category like Артикли, Падежи, Времена, etc."
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "rule_name"
+    ]
+}

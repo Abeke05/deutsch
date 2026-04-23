@@ -1,0 +1,148 @@
+2026-04-23 05:10:48,073 - main - INFO - === Logging system initialized ===
+2026-04-23 05:10:48,073 - main - INFO - Log file: logs/app_20260423_051048.log
+2026-04-23 05:10:48,073 - main - INFO - Log level: INFO
+2026-04-23 05:10:48,073 - main - INFO - Timestamp: 20260423_051048
+2026-04-23 05:10:48,853 - main - INFO - Included router: routers.aihub.router
+2026-04-23 05:10:48,872 - main - INFO - Included router: routers.auth.router
+2026-04-23 05:10:48,921 - main - INFO - Included router: routers.grammar_rules.router
+2026-04-23 05:10:48,923 - main - INFO - Included router: routers.health.router
+2026-04-23 05:10:48,925 - main - INFO - Included router: routers.migrate.router
+2026-04-23 05:10:48,945 - main - INFO - Included router: routers.settings.router
+2026-04-23 05:10:48,983 - main - INFO - Included router: routers.storage.router
+2026-04-23 05:10:48,991 - main - INFO - Included router: routers.user.router
+2026-04-23 05:10:49,040 - main - INFO - Included router: routers.vocabulary_words.router
+2026-04-23 05:10:49,042 - main - INFO - === Application startup initiated ===
+2026-04-23 05:10:49,042 - services.database - INFO - Ignore creating tables
+2026-04-23 05:10:49,042 - services.mock_data - INFO - Ignore initialize data
+2026-04-23 05:10:49,042 - services.auth - INFO - Ignore initialize admin
+2026-04-23 05:10:49,042 - main - INFO - === Application startup completed successfully ===
+2026-04-23 05:10:54,675 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-23 05:10:54,675 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-23 05:10:54,685 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:10:55,128 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:10:55,128 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:10:55,128 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-23 05:10:55,128 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-23 05:10:55,129 - core.database - INFO - Starting database initialization...
+2026-04-23 05:10:55,129 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-23 05:10:55,129 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-23 05:10:55,130 - core.database - INFO - Creating async database engine...
+2026-04-23 05:10:55,130 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-23 05:10:55,173 - core.database - INFO - Database engine created successfully
+2026-04-23 05:10:55,173 - core.database - INFO - Creating async session maker...
+2026-04-23 05:10:55,173 - core.database - INFO - Async session maker created successfully
+2026-04-23 05:10:55,173 - core.database - INFO - Database connection initialized successfully
+2026-04-23 05:10:55,173 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-23 05:10:55,173 - core.database - INFO - 🔧 Starting table creation...
+2026-04-23 05:10:56,631 - core.database - INFO - Tables initialized successfully
+2026-04-23 05:10:56,632 - core.database - DEBUG - [DB_OP] Create tables completed in 1.4585s
+2026-04-23 05:10:56,695 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-23 05:10:56,696 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.5676s
+2026-04-23 05:10:56,697 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:10:57,282 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:10:57,284 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.1556s
+2026-04-23 05:11:01,036 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:11:01,036 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:11:01,036 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 05:11:01,037 - routers.grammar_rules - DEBUG - Querying grammar_ruless: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:11:01,565 - routers.grammar_rules - DEBUG - Found 0 grammar_ruless
+2026-04-23 05:11:01,566 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5299s
+2026-04-23 05:11:02,634 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-04-23 05:11:02,635 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-04-23 05:11:03,168 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-7fb43b4b-8c27-469e-a1e4-7084350cf686', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Du bist ein erfahrener Deutschlehrer für russisch- und kasachischsprachige Lernende. Der Nutzer nennt dir ein Grammatikthema oder eine Regel (z.B. "Perfekt", "Akkusativ", "модальные глаголы", "определённый артикль", "сабақты етістік" usw.). Gib GENAU ein JSON-Objekt zurück — ohne Markdown, ohne Kommentare, ohne Erklärungen drumherum.\n\nWICHTIGE REGELN:\n1. "rule_name": der offizielle deutsche Name der Regel/des Themas (z.B. "Perfekt", "Akkusativ", "Modalverben", "Bestimmter Artikel", "Nebensatz mit weil"). Wenn die Eingabe auf Russisch oder Kasachisch war, übersetze sie trotzdem in den korrekten deutschen grammatischen Namen.\n2. "explanation_ru": подробное, чёткое объяснение правила на русском языке. 3-6 предложений. Объясни: что это, когда используется, как образуется, ключевые нюансы. Пиши простым языком для уровня A2-B2.\n3. "explanation_kz": сол ережені қазақ тілінде түсіндіру. 3-6 сөйлем. Не екенін, қашан қолданылатынын, қалай жасалатынын және негізгі ерекшеліктерін түсіндір. Қарапайым тілде, A2-B2 деңгейіне сай жаз. Қазақ тілін қолдан (аудармай қалдырма).\n4. "examples": 4-6 грамматически правильных немецких примеров, каждый с новой строки (разделитель \\n). Можно для каждого примера в скобках дать короткий перевод на русский, например: "Ich habe einen Apfel gegessen. (Я съел яблоко.)"\n5. "category": короткое название категории на русском языке. Выбери ОДНО из: "Артикли", "Падежи", "Времена", "Модальные глаголы", "Предлоги", "Придаточные предложения", "Пассив", "Конъюнктив", "Склонение", "Порядок слов", "Местоимения", "Числительные", "Частицы", "Прилагательные", "Прочее".\n\nJSON-FORMAT:\n{\n  "rule_name": "...",\n  "explanation_ru": "...",\n  "explanation_kz": "...",\n  "examples": "Beispiel 1\\nBeispiel 2\\nBeispiel 3\\nBeispiel 4",\n  "category": "..."\n}\n\nAntworte NUR mit dem JSON-Objekt, keine weiteren Zeichen.'}, {'role': 'user', 'content': 'Akkusativ'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-04-23 05:11:03,169 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-04-23 05:11:03,170 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 05:11:03,182 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd7483134c0>
+2026-04-23 05:11:03,183 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd748863ec0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-04-23 05:11:03,193 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd748312d70>
+2026-04-23 05:11:03,194 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 05:11:03,194 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 05:11:03,194 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 05:11:03,195 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 05:11:03,195 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 05:11:12,096 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 12:11:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Apim-Request-Id', b'fd9b39c2-a496-4459-bf9d-1eaa5cbd6c3d'), (b'Azureml-Model-Session', b'd20260421025926-4da9a682'), (b'Skip-Error-Remapping', b'true'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Ms-Deployment-Name', b'gpt-5.4'), (b'X-Ms-Is-Spilled-Over', b'false'), (b'X-Ms-Rai-Invoked', b'true'), (b'X-Ms-Region', b'East US'), (b'X-Oneapi-Request-Id', b'2026042305110321936581206936833'), (b'X-Oneapi-Trans-Id', b'29644440104599894'), (b'X-Ratelimit-Abusepenalty-Active', b'False'), (b'X-Ratelimit-Limit-Requests', b'70000'), (b'X-Ratelimit-Limit-Tokens', b'7000000'), (b'X-Ratelimit-Remaining-Requests', b'69999'), (b'X-Ratelimit-Remaining-Tokens', b'6999410'), (b'X-Ratelimit-Renewalperiod-Requests', b'60'), (b'X-Ratelimit-Renewalperiod-Tokens', b'60'), (b'X-Ratelimit-Reset-Requests', b'0'), (b'X-Ratelimit-Reset-Tokens', b'5'), (b'X-Request-Id', b'ff9d3216-fa2e-4807-81aa-9cad6e342a71'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0cc4c0faaa69ac-LAX')])
+2026-04-23 05:11:12,097 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 05:11:12,097 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 05:11:12,098 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 05:11:12,098 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 05:11:12,098 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 05:11:12,099 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 23 Apr 2026 12:11:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'apim-request-id': 'fd9b39c2-a496-4459-bf9d-1eaa5cbd6c3d', 'azureml-model-session': 'd20260421025926-4da9a682', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-deployment-name': 'gpt-5.4', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'East US', 'x-oneapi-request-id': '2026042305110321936581206936833', 'x-oneapi-trans-id': '29644440104599894', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-limit-requests': '70000', 'x-ratelimit-limit-tokens': '7000000', 'x-ratelimit-remaining-requests': '69999', 'x-ratelimit-remaining-tokens': '6999410', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '0', 'x-ratelimit-reset-tokens': '5', 'x-request-id': 'ff9d3216-fa2e-4807-81aa-9cad6e342a71', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'server': 'cloudflare', 'cf-ray': '9f0cc4c0faaa69ac-LAX'})
+2026-04-23 05:11:12,099 - openai._base_client - DEBUG - request_id: ff9d3216-fa2e-4807-81aa-9cad6e342a71
+2026-04-23 05:11:18,616 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-8e252b5e-1df4-4cde-8b8c-c9b663448548', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Du bist ein erfahrener Deutschlehrer für russisch- und kasachischsprachige Lernende. Der Nutzer nennt dir ein Grammatikthema oder eine Regel (z.B. "Perfekt", "Akkusativ", "модальные глаголы", "определённый артикль", "сабақты етістік" usw.). Gib GENAU ein JSON-Objekt zurück — ohne Markdown, ohne Kommentare, ohne Erklärungen drumherum.\n\nWICHTIGE REGELN:\n1. "rule_name": der offizielle deutsche Name der Regel/des Themas (z.B. "Perfekt", "Akkusativ", "Modalverben", "Bestimmter Artikel", "Nebensatz mit weil"). Wenn die Eingabe auf Russisch oder Kasachisch war, übersetze sie trotzdem in den korrekten deutschen grammatischen Namen.\n2. "explanation_ru": подробное, чёткое объяснение правила на русском языке. 3-6 предложений. Объясни: что это, когда используется, как образуется, ключевые нюансы. Пиши простым языком для уровня A2-B2.\n3. "explanation_kz": сол ережені қазақ тілінде түсіндіру. 3-6 сөйлем. Не екенін, қашан қолданылатынын, қалай жасалатынын және негізгі ерекшеліктерін түсіндір. Қарапайым тілде, A2-B2 деңгейіне сай жаз. Қазақ тілін қолдан (аудармай қалдырма).\n4. "examples": 4-6 грамматически правильных немецких примеров, каждый с новой строки (разделитель \\n). Можно для каждого примера в скобках дать короткий перевод на русский, например: "Ich habe einen Apfel gegessen. (Я съел яблоко.)"\n5. "category": короткое название категории на русском языке. Выбери ОДНО из: "Артикли", "Падежи", "Времена", "Модальные глаголы", "Предлоги", "Придаточные предложения", "Пассив", "Конъюнктив", "Склонение", "Порядок слов", "Местоимения", "Числительные", "Частицы", "Прилагательные", "Прочее".\n\nJSON-FORMAT:\n{\n  "rule_name": "...",\n  "explanation_ru": "...",\n  "explanation_kz": "...",\n  "examples": "Beispiel 1\\nBeispiel 2\\nBeispiel 3\\nBeispiel 4",\n  "category": "..."\n}\n\nAntworte NUR mit dem JSON-Objekt, keine weiteren Zeichen.'}, {'role': 'user', 'content': 'Dativ'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-04-23 05:11:18,617 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-04-23 05:11:18,617 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 05:11:18,624 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd74835b790>
+2026-04-23 05:11:18,624 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fd7482e9bc0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-04-23 05:11:18,632 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fd7483599c0>
+2026-04-23 05:11:18,633 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 05:11:18,634 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 05:11:18,634 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 05:11:18,635 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 05:11:18,635 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 05:11:26,352 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 12:11:26 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Apim-Request-Id', b'4119ffb6-cf0e-4bc6-8649-e8e5f2593660'), (b'Azureml-Model-Session', b'd20260421032845-c8b5c2d4'), (b'Skip-Error-Remapping', b'true'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Ms-Deployment-Name', b'gpt-5.4'), (b'X-Ms-Is-Spilled-Over', b'false'), (b'X-Ms-Rai-Invoked', b'true'), (b'X-Ms-Region', b'East US 2'), (b'X-Oneapi-Request-Id', b'2026042305111865176350403933888'), (b'X-Oneapi-Trans-Id', b'29644465991844184'), (b'X-Ratelimit-Abusepenalty-Active', b'False'), (b'X-Ratelimit-Limit-Requests', b'10'), (b'X-Ratelimit-Limit-Tokens', b'1000'), (b'X-Ratelimit-Remaining-Requests', b'9'), (b'X-Ratelimit-Remaining-Tokens', b'412'), (b'X-Ratelimit-Renewalperiod-Requests', b'60'), (b'X-Ratelimit-Renewalperiod-Tokens', b'60'), (b'X-Ratelimit-Reset-Requests', b'6000'), (b'X-Ratelimit-Reset-Tokens', b'35280'), (b'X-Request-Id', b'4dbaf7f9-5f29-4ab3-99a8-8e8349d1cd50'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0cc52178932719-LAX')])
+2026-04-23 05:11:26,352 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 05:11:26,352 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 05:11:26,353 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 05:11:26,353 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 05:11:26,353 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 05:11:26,354 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 23 Apr 2026 12:11:26 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'apim-request-id': '4119ffb6-cf0e-4bc6-8649-e8e5f2593660', 'azureml-model-session': 'd20260421032845-c8b5c2d4', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-deployment-name': 'gpt-5.4', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'East US 2', 'x-oneapi-request-id': '2026042305111865176350403933888', 'x-oneapi-trans-id': '29644465991844184', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-limit-requests': '10', 'x-ratelimit-limit-tokens': '1000', 'x-ratelimit-remaining-requests': '9', 'x-ratelimit-remaining-tokens': '412', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '6000', 'x-ratelimit-reset-tokens': '35280', 'x-request-id': '4dbaf7f9-5f29-4ab3-99a8-8e8349d1cd50', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'server': 'cloudflare', 'cf-ray': '9f0cc52178932719-LAX'})
+2026-04-23 05:11:26,354 - openai._base_client - DEBUG - request_id: 4dbaf7f9-5f29-4ab3-99a8-8e8349d1cd50
+2026-04-23 05:11:31,625 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:11:31,625 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:11:31,625 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 05:11:31,626 - routers.grammar_rules - DEBUG - Creating new grammar_rules with data: rule_name='Dativ' explanation_ru='Датив — это падеж, который часто отвечает на вопрос «кому? чему?». Он используется после определённых глаголов, предлогов и также для обозначения получателя действия. В немецком языке датив влияет на артикли, местоимения и иногда на окончания прилагательных. Например: der → dem, die → der, das → dem, die → den. Важно отличать датив от аккузатива: аккузатив показывает прямой объект, а датив — косвенный объект.' explanation_kz='Датив — неміс тіліндегі септік, ол көбінесе «кімге? неге?» деген сұрақтарға жауап береді. Ол белгілі бір етістіктерден, предлогтардан кейін және іс-әрекеттің кімге бағытталғанын көрсету үшін қолданылады. Неміс тілінде датив артикльдерге, есімдіктерге және кейде сын есім жалғауларына әсер етеді. Мысалы: der → dem, die → der, das → dem, die → den. Дативті Akkusativ-пен шатастырмау керек: Akkusativ тура толықтауышты, ал Dativ жанама толықтауышты көрсетеді.' examples='Ich gebe dem Mann ein Buch. (Я даю мужчине книгу.)\nSie hilft der Frau. (Она помогает женщине.)\nWir fahren mit dem Bus. (Мы едем на автобусе.)\nDas Geschenk gehört dem Kind. (Подарок принадлежит ребёнку.)\nIch danke dir für deine Hilfe. (Я благодарю тебя за помощь.)' category='Падежи'
+2026-04-23 05:11:31,824 - httpcore.connection - DEBUG - close.started
+2026-04-23 05:11:31,825 - httpcore.connection - DEBUG - close.complete
+2026-04-23 05:11:32,474 - services.grammar_rules - INFO - Created grammar_rules with id: 1
+2026-04-23 05:11:32,474 - routers.grammar_rules - INFO - Grammar_rules created successfully with id: 1
+2026-04-23 05:11:32,475 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.8500s
+2026-04-23 05:11:32,953 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:11:32,953 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:11:32,953 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 05:11:32,954 - routers.grammar_rules - DEBUG - Querying grammar_ruless: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:11:33,339 - routers.grammar_rules - DEBUG - Found 1 grammar_ruless
+2026-04-23 05:11:33,340 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3870s
+2026-04-23 05:17:55,109 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:17:55,112 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:17:55,112 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:17:55,113 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0006s
+2026-04-23 05:17:55,113 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:17:56,483 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:17:56,483 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.3711s
+2026-04-23 05:17:56,857 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:17:56,857 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:17:56,857 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 05:17:56,858 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:17:57,371 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:17:57,371 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5142s
+2026-04-23 05:18:00,751 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:00,753 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:00,753 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:18:00,754 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-23 05:18:00,754 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:18:01,140 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:18:01,140 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3869s
+2026-04-23 05:18:01,801 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:01,801 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:18:01,802 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-23 05:18:01,803 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:18:02,206 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:18:02,211 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4100s
+2026-04-23 05:18:02,669 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:02,928 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:02,928 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:18:02,928 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 05:18:02,929 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:18:03,315 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:18:03,316 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3886s
+2026-04-23 05:18:03,776 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 05:18:03,777 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 05:18:03,777 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 05:18:03,777 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 05:18:04,164 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 05:18:04,165 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3880s
+2026-04-23 05:18:48,152 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 05:19:28,677 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-23 05:19:28,744 - core.database - INFO - Database connection closed and engine disposed
+2026-04-23 05:19:28,744 - services.database - INFO - Database connections closed
+2026-04-23 05:19:28,745 - services.database - DEBUG - [DB_OP] Database close completed in 0.0677s

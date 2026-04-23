@@ -1,0 +1,51 @@
+{
+    "title": "vocabulary_words",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Primary key, auto-increment"
+        },
+        "user_id": {
+            "type": "string",
+            "description": "User ID"
+        },
+        "german_word": {
+            "type": "string",
+            "description": "German word in base form"
+        },
+        "plural_form": {
+            "type": "string",
+            "description": "Plural form or additional forms"
+        },
+        "part_of_speech": {
+            "type": "string",
+            "description": "Part of speech"
+        },
+        "gender": {
+            "type": "string",
+            "description": "Gender der/die/das"
+        },
+        "russian_translation": {
+            "type": "string",
+            "description": "Russian translation"
+        },
+        "kazakh_translation": {
+            "type": "string",
+            "description": "Kazakh translation"
+        },
+        "example_sentence": {
+            "type": "string",
+            "description": "Example sentences"
+        },
+        "category": {
+            "type": "string",
+            "description": "Semantic category like Technik, Möbel, Tiere, Essen, etc."
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "german_word"
+    ]
+}

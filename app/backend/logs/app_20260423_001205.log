@@ -1,0 +1,267 @@
+2026-04-23 00:12:05,434 - main - INFO - === Logging system initialized ===
+2026-04-23 00:12:05,435 - main - INFO - Log file: logs/app_20260423_001205.log
+2026-04-23 00:12:05,435 - main - INFO - Log level: INFO
+2026-04-23 00:12:05,436 - main - INFO - Timestamp: 20260423_001205
+2026-04-23 00:12:06,617 - main - INFO - Included router: routers.aihub.router
+2026-04-23 00:12:06,641 - main - INFO - Included router: routers.auth.router
+2026-04-23 00:12:06,642 - main - INFO - Included router: routers.health.router
+2026-04-23 00:12:06,644 - main - INFO - Included router: routers.migrate.router
+2026-04-23 00:12:06,667 - main - INFO - Included router: routers.settings.router
+2026-04-23 00:12:06,714 - main - INFO - Included router: routers.storage.router
+2026-04-23 00:12:06,730 - main - INFO - Included router: routers.user.router
+2026-04-23 00:12:06,788 - main - INFO - Included router: routers.vocabulary_words.router
+2026-04-23 00:12:06,790 - main - INFO - === Application startup initiated ===
+2026-04-23 00:12:06,790 - services.database - INFO - Ignore creating tables
+2026-04-23 00:12:06,790 - services.mock_data - INFO - Ignore initialize data
+2026-04-23 00:12:06,790 - services.auth - INFO - Ignore initialize admin
+2026-04-23 00:12:06,791 - main - INFO - === Application startup completed successfully ===
+2026-04-23 00:12:11,308 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-23 00:12:11,309 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-23 00:12:11,320 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:12:11,715 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:12:11,715 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:12:11,715 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-23 00:12:11,715 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-23 00:12:11,716 - core.database - INFO - Starting database initialization...
+2026-04-23 00:12:11,716 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-23 00:12:11,717 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-23 00:12:11,718 - core.database - INFO - Creating async database engine...
+2026-04-23 00:12:11,718 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-23 00:12:11,766 - core.database - INFO - Database engine created successfully
+2026-04-23 00:12:11,767 - core.database - INFO - Creating async session maker...
+2026-04-23 00:12:11,767 - core.database - INFO - Async session maker created successfully
+2026-04-23 00:12:11,767 - core.database - INFO - Database connection initialized successfully
+2026-04-23 00:12:11,767 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-23 00:12:11,767 - core.database - INFO - 🔧 Starting table creation...
+2026-04-23 00:12:13,151 - core.database - INFO - Tables initialized successfully
+2026-04-23 00:12:13,151 - core.database - DEBUG - [DB_OP] Create tables completed in 1.3840s
+2026-04-23 00:12:13,215 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-23 00:12:13,216 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.5004s
+2026-04-23 00:12:13,216 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:12:13,795 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:12:13,796 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.0805s
+2026-04-23 00:13:45,573 - core.config - DEBUG - Read dynamic attribute frontend_url from environment variable FRONTEND_URL
+2026-04-23 00:13:45,574 - core.config - DEBUG - Read dynamic attribute oidc_issuer_url from environment variable OIDC_ISSUER_URL
+2026-04-23 00:13:49,994 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 00:13:57,183 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:13:57,183 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-23 00:13:57,829 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:13:57,830 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:13:57,830 - core.config - DEBUG - Read dynamic attribute oidc_client_id from environment variable OIDC_CLIENT_ID
+2026-04-23 00:13:57,830 - core.config - DEBUG - Read dynamic attribute oidc_scope from environment variable OIDC_SCOPE
+2026-04-23 00:13:57,831 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.6486s
+2026-04-23 00:14:10,625 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:14:10,625 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-23 00:14:10,626 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:14:11,262 - routers.auth - INFO - [callback] Exchanging code for tokens with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:14:11,262 - core.config - DEBUG - Read dynamic attribute oidc_client_secret from environment variable OIDC_CLIENT_SECRET
+2026-04-23 00:14:11,380 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 00:14:11,392 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44e917b0>
+2026-04-23 00:14:11,393 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44dbbc40> server_hostname='auth.atoms.dev' timeout=5.0
+2026-04-23 00:14:11,403 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44e91510>
+2026-04-23 00:14:11,404 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 00:14:11,404 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:14:11,405 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 00:14:11,406 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:14:11,406 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 00:14:11,498 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:14:11 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'x-response-time', b'0.059s'), (b'x-request-id', b'RWKxmd0RWQiXPXeC75XeUqaas9DJTKVQB4KqJ0ZVGlA'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b11e54deb6049-LAX')])
+2026-04-23 00:14:11,499 - httpx - INFO - HTTP Request: POST https://auth.atoms.dev/api/v1/oidc/token "HTTP/1.1 200 OK"
+2026-04-23 00:14:11,499 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 00:14:11,500 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:14:11,500 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:14:11,500 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:14:11,501 - httpcore.connection - DEBUG - close.started
+2026-04-23 00:14:11,502 - httpcore.connection - DEBUG - close.complete
+2026-04-23 00:14:11,531 - core.auth - INFO - Fetching JWKS from: https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json
+2026-04-23 00:14:11,533 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=60.0 socket_options=None
+2026-04-23 00:14:11,581 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44e93190>
+2026-04-23 00:14:11,581 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44dbbe40> server_hostname='auth.atoms.dev' timeout=60.0
+2026-04-23 00:14:11,590 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44e92f20>
+2026-04-23 00:14:11,591 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-04-23 00:14:11,591 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:14:11,591 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-04-23 00:14:11,592 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:14:11,592 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-04-23 00:14:11,618 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:14:11 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'cache-control', b'public, max-age=3600'), (b'x-response-time', b'0.001s'), (b'x-request-id', b'dd8283705837eda34e1a4be2bb3084ce'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b11e67d89fbed-LAX')])
+2026-04-23 00:14:11,619 - httpx - INFO - HTTP Request: GET https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json "HTTP/1.1 200 OK"
+2026-04-23 00:14:11,619 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-04-23 00:14:11,619 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:14:11,620 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:14:11,620 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:14:11,620 - core.auth - INFO - Successfully fetched JWKS with 1 keys
+2026-04-23 00:14:11,620 - httpcore.connection - DEBUG - close.started
+2026-04-23 00:14:11,621 - httpcore.connection - DEBUG - close.complete
+2026-04-23 00:14:11,628 - core.auth - INFO - ID token successfully validated for user hash: 0553def2
+2026-04-23 00:14:11,629 - services.auth - DEBUG - [DB_OP] Starting get_or_create_user - platform_sub: 595041
+2026-04-23 00:14:12,011 - services.auth - DEBUG - [DB_OP] User lookup completed in 0.3817s - found: True
+2026-04-23 00:14:12,011 - services.auth - DEBUG - [DB_OP] Starting user commit/refresh
+2026-04-23 00:14:12,520 - services.auth - DEBUG - [DB_OP] User commit/refresh completed in 0.5091s
+2026-04-23 00:14:12,521 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-04-23 00:14:12,521 - core.auth - DEBUG - Authentication token created for user hash: 0553def2
+2026-04-23 00:14:12,521 - routers.auth - INFO - [callback] OIDC callback successful, redirecting to https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/auth/callback?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTUwNDEiLCJlbWFpbCI6ImFiZHVtYWxpajIwMDdAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6ImFiZHVtYWxpajIwMDciLCJsYXN0X2xvZ2luIjoiMjAyNi0wNC0yM1QwNzoxNDoxMi4wMTE1ODYrMDA6MDAiLCJleHAiOjE3Nzk1MjA0NTIsImlhdCI6MTc3NjkyODQ1MiwibmJmIjoxNzc2OTI4NDUyfQ.OwGoDWQ3mdWehFJxb_FTdTlbir77JrwwV3PsUY38h6Y&expires_at=1779520452&token_type=Bearer
+2026-04-23 00:14:12,522 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.8968s
+2026-04-23 00:14:18,179 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:14:18,523 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:14:18,524 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:14:18,524 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 00:14:18,525 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:14:18,905 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:14:18,906 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3819s
+2026-04-23 00:14:25,895 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 00:14:26,998 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:14:26,998 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0004s
+2026-04-23 00:14:27,443 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:14:27,443 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:14:27,444 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4464s
+2026-04-23 00:16:34,791 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 00:16:37,387 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:16:37,387 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-23 00:16:37,832 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:16:37,833 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:16:37,833 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4463s
+2026-04-23 00:16:38,850 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:16:38,851 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-23 00:16:39,293 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:16:39,294 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:16:39,294 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4439s
+2026-04-23 00:16:44,327 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:16:44,328 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0005s
+2026-04-23 00:16:44,328 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev, host=127.0.0.1:8002, scheme=https, dynamic_url=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev
+2026-04-23 00:16:44,835 - routers.auth - INFO - [callback] Exchanging code for tokens with redirect_uri=https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/api/v1/auth/callback
+2026-04-23 00:16:44,880 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 00:16:44,895 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44ce5840>
+2026-04-23 00:16:44,896 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44db82c0> server_hostname='auth.atoms.dev' timeout=5.0
+2026-04-23 00:16:44,908 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44ce7910>
+2026-04-23 00:16:44,909 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 00:16:44,909 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:16:44,909 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 00:16:44,909 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:16:44,910 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 00:16:44,999 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:16:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'x-response-time', b'0.063s'), (b'x-request-id', b'07mkcJQ3hlwToZQiXWlTONT_GvaiugrqHo7P_HYNPoI'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b15a4b87dc74e-LAX')])
+2026-04-23 00:16:45,000 - httpx - INFO - HTTP Request: POST https://auth.atoms.dev/api/v1/oidc/token "HTTP/1.1 200 OK"
+2026-04-23 00:16:45,000 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 00:16:45,001 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:16:45,001 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:16:45,001 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:16:45,001 - httpcore.connection - DEBUG - close.started
+2026-04-23 00:16:45,002 - httpcore.connection - DEBUG - close.complete
+2026-04-23 00:16:45,070 - core.auth - INFO - Fetching JWKS from: https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json
+2026-04-23 00:16:45,071 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=60.0 socket_options=None
+2026-04-23 00:16:45,086 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44ce4a60>
+2026-04-23 00:16:45,087 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44ca8a40> server_hostname='auth.atoms.dev' timeout=60.0
+2026-04-23 00:16:45,095 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44ce73a0>
+2026-04-23 00:16:45,096 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-04-23 00:16:45,096 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:16:45,096 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-04-23 00:16:45,096 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:16:45,097 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-04-23 00:16:45,125 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:16:45 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'cache-control', b'public, max-age=3600'), (b'x-response-time', b'0.001s'), (b'x-request-id', b'2e7bb31ea672e620f56f427b15c042e8'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b15a5df22f7db-LAX')])
+2026-04-23 00:16:45,126 - httpx - INFO - HTTP Request: GET https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json "HTTP/1.1 200 OK"
+2026-04-23 00:16:45,126 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-04-23 00:16:45,127 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:16:45,127 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:16:45,127 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:16:45,127 - core.auth - INFO - Successfully fetched JWKS with 1 keys
+2026-04-23 00:16:45,128 - httpcore.connection - DEBUG - close.started
+2026-04-23 00:16:45,128 - httpcore.connection - DEBUG - close.complete
+2026-04-23 00:16:45,129 - core.auth - INFO - ID token successfully validated for user hash: 0553def2
+2026-04-23 00:16:45,129 - services.auth - DEBUG - [DB_OP] Starting get_or_create_user - platform_sub: 595041
+2026-04-23 00:16:45,444 - services.auth - DEBUG - [DB_OP] User lookup completed in 0.3152s - found: True
+2026-04-23 00:16:45,444 - services.auth - DEBUG - [DB_OP] Starting user commit/refresh
+2026-04-23 00:16:45,952 - services.auth - DEBUG - [DB_OP] User commit/refresh completed in 0.5074s
+2026-04-23 00:16:45,952 - core.auth - DEBUG - Authentication token created for user hash: 0553def2
+2026-04-23 00:16:45,953 - routers.auth - INFO - [callback] OIDC callback successful, redirecting to https://yau8vd-aed132c67d834d0e8e52e49a2609bc92-preview.app.atoms.dev/auth/callback?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTUwNDEiLCJlbWFpbCI6ImFiZHVtYWxpajIwMDdAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwibmFtZSI6ImFiZHVtYWxpajIwMDciLCJsYXN0X2xvZ2luIjoiMjAyNi0wNC0yM1QwNzoxNjo0NS40NDQ5NDArMDA6MDAiLCJleHAiOjE3Nzk1MjA2MDUsImlhdCI6MTc3NjkyODYwNSwibmJmIjoxNzc2OTI4NjA1fQ.NHXGExVdD2AEBlYfRgDXNT9rzEkYu6uvseSp7_qqOeY&expires_at=1779520605&token_type=Bearer
+2026-04-23 00:16:45,953 - core.database - DEBUG - [DB_OP] Database session cleanup after 1.6261s
+2026-04-23 00:16:51,985 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:16:52,392 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:16:52,392 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:16:52,392 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 00:16:52,393 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:16:52,773 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:16:52,774 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3813s
+2026-04-23 00:17:22,496 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-04-23 00:17:22,496 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-04-23 00:17:23,396 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-e829511c-969c-4e34-8bf7-9a22c4053616', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Ты — эксперт по немецкому языку. Тебе дают немецкое слово. Верни строго JSON без markdown, без пояснений. Формат:\n{\n  "german_word": "слово в единственном числе в правильной форме (существительные с заглавной буквы и с артиклем der/die/das в начале например \'der Hund\', глаголы в инфинитиве)",\n  "plural_form": "для существительных — форма множественного числа с артиклем \'die\' (например \'die Hunde\'). Для глаголов — основные формы (Präsens, Präteritum, Partizip II), например \'läuft, lief, gelaufen\'. Для прилагательных — формы сравнения (Komparativ, Superlativ), например \'schöner, am schönsten\'. Для остальных частей речи — пустая строка",\n  "part_of_speech": "одно из: Nomen (существительное), Verb (глагол), Adjektiv (прилагательное), Adverb (наречие), Pronomen (местоимение), Präposition (предлог), Konjunktion (союз), Artikel (артикль), Numerale (числительное), Interjektion (междометие)",\n  "gender": "только для существительных: der, die или das. Для других частей речи — пустая строка",\n  "russian_translation": "перевод на русский язык",\n  "kazakh_translation": "перевод на казахский язык",\n  "example_sentence": "2 коротких примера предложений на немецком с этим словом, разделённых символом новой строки"\n}\nОтвечай ТОЛЬКО JSON-объектом.'}, {'role': 'user', 'content': 'туалет'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-04-23 00:17:23,398 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-04-23 00:17:23,398 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 00:17:23,412 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae4470a080>
+2026-04-23 00:17:23,412 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44ca88c0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-04-23 00:17:23,421 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44709ab0>
+2026-04-23 00:17:23,422 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 00:17:23,422 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:17:23,423 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 00:17:23,423 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:17:23,423 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 00:17:25,619 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:17:25 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Apim-Request-Id', b'4692368b-5f6f-402b-877d-0f9fb81b2446'), (b'Azureml-Model-Session', b'd20260415211354-4114a1bc'), (b'Skip-Error-Remapping', b'true'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Ms-Deployment-Name', b'gpt-5.4'), (b'X-Ms-Is-Spilled-Over', b'false'), (b'X-Ms-Rai-Invoked', b'true'), (b'X-Ms-Region', b'East US'), (b'X-Oneapi-Request-Id', b'2026042300172344913876666417150'), (b'X-Oneapi-Trans-Id', b'29614879035883864'), (b'X-Ratelimit-Abusepenalty-Active', b'False'), (b'X-Ratelimit-Limit-Requests', b'70000'), (b'X-Ratelimit-Limit-Tokens', b'7000000'), (b'X-Ratelimit-Remaining-Requests', b'69999'), (b'X-Ratelimit-Remaining-Tokens', b'6999625'), (b'X-Ratelimit-Renewalperiod-Requests', b'60'), (b'X-Ratelimit-Renewalperiod-Tokens', b'60'), (b'X-Ratelimit-Reset-Requests', b'0'), (b'X-Ratelimit-Reset-Tokens', b'3'), (b'X-Request-Id', b'e82682f2-e6a6-45de-876c-6c51aaa88b78'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b16956aea2a9f-LAX')])
+2026-04-23 00:17:25,620 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 00:17:25,620 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 00:17:25,621 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:17:25,621 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:17:25,621 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:17:25,621 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 23 Apr 2026 07:17:25 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'apim-request-id': '4692368b-5f6f-402b-877d-0f9fb81b2446', 'azureml-model-session': 'd20260415211354-4114a1bc', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-deployment-name': 'gpt-5.4', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'East US', 'x-oneapi-request-id': '2026042300172344913876666417150', 'x-oneapi-trans-id': '29614879035883864', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-limit-requests': '70000', 'x-ratelimit-limit-tokens': '7000000', 'x-ratelimit-remaining-requests': '69999', 'x-ratelimit-remaining-tokens': '6999625', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '0', 'x-ratelimit-reset-tokens': '3', 'x-request-id': 'e82682f2-e6a6-45de-876c-6c51aaa88b78', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'server': 'cloudflare', 'cf-ray': '9f0b16956aea2a9f-LAX'})
+2026-04-23 00:17:25,622 - openai._base_client - DEBUG - request_id: e82682f2-e6a6-45de-876c-6c51aaa88b78
+2026-04-23 00:17:26,081 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:17:26,081 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:17:26,082 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 00:17:26,082 - routers.vocabulary_words - DEBUG - Creating new vocabulary_words with data: german_word='die Toilette' plural_form='die Toiletten' part_of_speech='Nomen' gender='die' russian_translation='туалет' kazakh_translation='дәретхана' example_sentence='Wo ist die Toilette?\nDie Toilette ist sauber.'
+2026-04-23 00:17:27,031 - services.vocabulary_words - INFO - Created vocabulary_words with id: 13
+2026-04-23 00:17:27,032 - routers.vocabulary_words - INFO - Vocabulary_words created successfully with id: 13
+2026-04-23 00:17:27,032 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.9512s
+2026-04-23 00:17:27,397 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:17:27,397 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:17:27,397 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-23 00:17:27,398 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:17:27,778 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 00:17:27,779 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3817s
+2026-04-23 00:17:31,686 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:17:31,686 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:17:31,687 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 00:17:31,687 - routers.vocabulary_words - DEBUG - Deleting vocabulary_words with id: 13
+2026-04-23 00:17:32,257 - services.vocabulary_words - INFO - Deleted vocabulary_words 13
+2026-04-23 00:17:32,258 - routers.vocabulary_words - INFO - Vocabulary_words 13 deleted successfully
+2026-04-23 00:17:32,258 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.5718s
+2026-04-23 00:17:32,721 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:17:32,721 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:17:32,722 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 00:17:32,722 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:17:33,101 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:17:33,102 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3811s
+2026-04-23 00:19:33,612 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-04-23 00:19:34,580 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:19:34,990 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:19:34,990 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:19:34,991 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 00:19:34,991 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 00:19:35,372 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:19:35,374 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.3835s
+2026-04-23 00:19:49,359 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-9e6af905-4f10-4689-adb7-e7e306fbe8de', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Ты — эксперт по немецкому языку. Тебе дают немецкое слово. Верни строго JSON без markdown, без пояснений. Формат:\n{\n  "german_word": "слово в единственном числе в правильной форме (существительные с заглавной буквы и с артиклем der/die/das в начале например \'der Hund\', глаголы в инфинитиве)",\n  "plural_form": "для существительных — форма множественного числа с артиклем \'die\' (например \'die Hunde\'). Для глаголов — основные формы (Präsens, Präteritum, Partizip II), например \'läuft, lief, gelaufen\'. Для прилагательных — формы сравнения (Komparativ, Superlativ), например \'schöner, am schönsten\'. Для остальных частей речи — пустая строка",\n  "part_of_speech": "одно из: Nomen (существительное), Verb (глагол), Adjektiv (прилагательное), Adverb (наречие), Pronomen (местоимение), Präposition (предлог), Konjunktion (союз), Artikel (артикль), Numerale (числительное), Interjektion (междометие)",\n  "gender": "только для существительных: der, die или das. Для других частей речи — пустая строка",\n  "russian_translation": "перевод на русский язык",\n  "kazakh_translation": "перевод на казахский язык",\n  "example_sentence": "2 коротких примера предложений на немецком с этим словом, разделённых символом новой строки"\n}\nОтвечай ТОЛЬКО JSON-объектом.'}, {'role': 'user', 'content': 'туалет'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-04-23 00:19:49,360 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-04-23 00:19:49,360 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-23 00:19:49,380 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae44664100>
+2026-04-23 00:19:49,381 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fae44837bc0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-04-23 00:19:49,390 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fae447f3700>
+2026-04-23 00:19:49,391 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-23 00:19:49,391 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-23 00:19:49,391 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-23 00:19:49,392 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-23 00:19:49,392 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-23 00:19:51,929 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 07:19:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Apim-Request-Id', b'5129ac72-c287-49ce-aad0-38a5f6d2f8eb'), (b'Azureml-Model-Session', b'd20260415225847-57198428'), (b'Skip-Error-Remapping', b'true'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Ms-Deployment-Name', b'gpt-5.4'), (b'X-Ms-Is-Spilled-Over', b'false'), (b'X-Ms-Rai-Invoked', b'true'), (b'X-Ms-Region', b'East US 2'), (b'X-Oneapi-Request-Id', b'2026042300194941203302000991650'), (b'X-Oneapi-Trans-Id', b'29615123916128603'), (b'X-Ratelimit-Abusepenalty-Active', b'False'), (b'X-Ratelimit-Limit-Requests', b'10'), (b'X-Ratelimit-Limit-Tokens', b'1000'), (b'X-Ratelimit-Remaining-Requests', b'9'), (b'X-Ratelimit-Remaining-Tokens', b'625'), (b'X-Ratelimit-Renewalperiod-Requests', b'60'), (b'X-Ratelimit-Renewalperiod-Tokens', b'60'), (b'X-Ratelimit-Reset-Requests', b'6000'), (b'X-Ratelimit-Reset-Tokens', b'22500'), (b'X-Request-Id', b'e389b973-154b-4262-bd5b-da618d63fcc5'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0b1a25bc2651ae-LAX')])
+2026-04-23 00:19:51,930 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-23 00:19:51,930 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-23 00:19:51,931 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-23 00:19:51,931 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-23 00:19:51,932 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-23 00:19:51,932 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 23 Apr 2026 07:19:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'apim-request-id': '5129ac72-c287-49ce-aad0-38a5f6d2f8eb', 'azureml-model-session': 'd20260415225847-57198428', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-deployment-name': 'gpt-5.4', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'East US 2', 'x-oneapi-request-id': '2026042300194941203302000991650', 'x-oneapi-trans-id': '29615123916128603', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-limit-requests': '10', 'x-ratelimit-limit-tokens': '1000', 'x-ratelimit-remaining-requests': '9', 'x-ratelimit-remaining-tokens': '625', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '6000', 'x-ratelimit-reset-tokens': '22500', 'x-request-id': 'e389b973-154b-4262-bd5b-da618d63fcc5', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'server': 'cloudflare', 'cf-ray': '9f0b1a25bc2651ae-LAX'})
+2026-04-23 00:19:51,932 - openai._base_client - DEBUG - request_id: e389b973-154b-4262-bd5b-da618d63fcc5
+2026-04-23 00:19:52,326 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 00:19:52,327 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 00:19:52,327 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0003s
+2026-04-23 00:19:52,328 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=None, skip=0, limit=1000, fields=None
+2026-04-23 00:19:52,772 - routers.vocabulary_words - DEBUG - Found 7 vocabulary_wordss
+2026-04-23 00:19:52,773 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4457s
+2026-04-23 00:19:52,774 - httpcore.connection - DEBUG - close.started
+2026-04-23 00:19:52,776 - httpcore.connection - DEBUG - close.complete
+2026-04-23 00:20:09,020 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-23 00:20:09,088 - core.database - INFO - Database connection closed and engine disposed
+2026-04-23 00:20:09,088 - services.database - INFO - Database connections closed
+2026-04-23 00:20:09,088 - services.database - DEBUG - [DB_OP] Database close completed in 0.0681s

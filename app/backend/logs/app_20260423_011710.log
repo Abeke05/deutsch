@@ -1,0 +1,52 @@
+2026-04-23 01:17:10,755 - main - INFO - === Logging system initialized ===
+2026-04-23 01:17:10,756 - main - INFO - Log file: logs/app_20260423_011710.log
+2026-04-23 01:17:10,757 - main - INFO - Log level: INFO
+2026-04-23 01:17:10,757 - main - INFO - Timestamp: 20260423_011710
+2026-04-23 01:17:11,798 - main - INFO - Included router: routers.aihub.router
+2026-04-23 01:17:11,822 - main - INFO - Included router: routers.auth.router
+2026-04-23 01:17:11,825 - main - INFO - Included router: routers.health.router
+2026-04-23 01:17:11,828 - main - INFO - Included router: routers.migrate.router
+2026-04-23 01:17:11,852 - main - INFO - Included router: routers.settings.router
+2026-04-23 01:17:11,893 - main - INFO - Included router: routers.storage.router
+2026-04-23 01:17:11,902 - main - INFO - Included router: routers.user.router
+2026-04-23 01:17:11,954 - main - INFO - Included router: routers.vocabulary_words.router
+2026-04-23 01:17:11,955 - main - INFO - === Application startup initiated ===
+2026-04-23 01:17:11,956 - services.database - INFO - Ignore creating tables
+2026-04-23 01:17:11,956 - services.mock_data - INFO - Ignore initialize data
+2026-04-23 01:17:11,956 - services.auth - INFO - Ignore initialize admin
+2026-04-23 01:17:11,956 - main - INFO - === Application startup completed successfully ===
+2026-04-23 01:17:19,522 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-23 01:17:19,523 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-23 01:17:19,536 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:17:19,914 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:17:19,915 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:17:19,915 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-23 01:17:19,915 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-23 01:17:19,915 - core.database - INFO - Starting database initialization...
+2026-04-23 01:17:19,915 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-23 01:17:19,915 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-23 01:17:19,916 - core.database - INFO - Creating async database engine...
+2026-04-23 01:17:19,916 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-23 01:17:20,063 - core.database - INFO - Database engine created successfully
+2026-04-23 01:17:20,064 - core.database - INFO - Creating async session maker...
+2026-04-23 01:17:20,064 - core.database - INFO - Async session maker created successfully
+2026-04-23 01:17:20,064 - core.database - INFO - Database connection initialized successfully
+2026-04-23 01:17:20,064 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-23 01:17:20,064 - core.database - INFO - 🔧 Starting table creation...
+2026-04-23 01:17:21,471 - core.database - INFO - Tables initialized successfully
+2026-04-23 01:17:21,472 - core.database - DEBUG - [DB_OP] Create tables completed in 1.4079s
+2026-04-23 01:17:21,534 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-23 01:17:21,535 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.6207s
+2026-04-23 01:17:21,536 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-23 01:17:22,109 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:17:22,110 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.1955s
+2026-04-23 01:17:26,796 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-23 01:17:26,796 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-23 01:17:26,797 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0007s
+2026-04-23 01:17:26,798 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=None, skip=0, limit=1000, fields=None
+2026-04-23 01:17:27,236 - routers.vocabulary_words - DEBUG - Found 8 vocabulary_wordss
+2026-04-23 01:17:27,237 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4411s
+2026-04-23 01:17:29,629 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-23 01:17:29,694 - core.database - INFO - Database connection closed and engine disposed
+2026-04-23 01:17:29,698 - services.database - INFO - Database connections closed
+2026-04-23 01:17:29,699 - services.database - DEBUG - [DB_OP] Database close completed in 0.0701s

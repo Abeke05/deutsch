@@ -1,0 +1,771 @@
+2026-04-22 23:22:38,418 - main - INFO - === Logging system initialized ===
+2026-04-22 23:22:38,419 - main - INFO - Log file: logs/app_20260422_232238.log
+2026-04-22 23:22:38,419 - main - INFO - Log level: INFO
+2026-04-22 23:22:38,420 - main - INFO - Timestamp: 20260422_232238
+2026-04-22 23:22:39,385 - main - INFO - Included router: routers.aihub.router
+2026-04-22 23:22:39,403 - main - INFO - Included router: routers.auth.router
+2026-04-22 23:22:39,407 - main - INFO - Included router: routers.health.router
+2026-04-22 23:22:39,429 - main - INFO - Included router: routers.settings.router
+2026-04-22 23:22:39,466 - main - INFO - Included router: routers.storage.router
+2026-04-22 23:22:39,474 - main - INFO - Included router: routers.user.router
+2026-04-22 23:22:39,618 - main - INFO - Included router: routers.vocabulary_words.router
+2026-04-22 23:22:39,620 - main - INFO - === Application startup initiated ===
+2026-04-22 23:22:39,620 - services.database - INFO - Ignore creating tables
+2026-04-22 23:22:39,620 - services.mock_data - INFO - Ignore initialize data
+2026-04-22 23:22:39,620 - services.auth - INFO - Ignore initialize admin
+2026-04-22 23:22:39,620 - main - INFO - === Application startup completed successfully ===
+2026-04-22 23:22:44,276 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-04-22 23:22:44,276 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-04-22 23:22:44,288 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-22 23:22:44,686 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-22 23:22:44,686 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-22 23:22:44,687 - core.database - WARNING - Database session maker not available, attempting lazy initialization...
+2026-04-22 23:22:44,687 - core.database - WARNING - Database not initialized, attempting lazy initialization...
+2026-04-22 23:22:44,688 - core.database - INFO - Starting database initialization...
+2026-04-22 23:22:44,688 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-04-22 23:22:44,689 - core.database - INFO - Normalizing database URL for async compatibility...
+2026-04-22 23:22:44,690 - core.database - INFO - Creating async database engine...
+2026-04-22 23:22:44,690 - core.database - INFO - Using QueuePool with connection pooling for non-Lambda environment
+2026-04-22 23:22:44,742 - core.database - INFO - Database engine created successfully
+2026-04-22 23:22:44,742 - core.database - INFO - Creating async session maker...
+2026-04-22 23:22:44,743 - core.database - INFO - Async session maker created successfully
+2026-04-22 23:22:44,743 - core.database - INFO - Database connection initialized successfully
+2026-04-22 23:22:44,744 - core.database - DEBUG - [DB_OP] Starting create_tables
+2026-04-22 23:22:44,744 - core.database - INFO - 🔧 Starting table creation...
+2026-04-22 23:22:46,107 - core.database - INFO - Tables initialized successfully
+2026-04-22 23:22:46,107 - core.database - DEBUG - [DB_OP] Create tables completed in 1.3634s
+2026-04-22 23:22:46,170 - core.database - INFO - Lazy database initialization completed successfully
+2026-04-22 23:22:46,171 - core.database - DEBUG - [DB_OP] Database session created successfully in 1.4850s
+2026-04-22 23:22:46,171 - routers.vocabulary_words - DEBUG - Querying vocabulary_wordss: query=None, sort=-created_at, skip=0, limit=500, fields=None
+2026-04-22 23:22:46,740 - services.vocabulary_words - ERROR - Error fetching vocabulary_words list: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:46,741 - routers.vocabulary_words - ERROR - Error querying vocabulary_wordss: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 116, in query_vocabulary_wordss
+    result = await service.get_list(
+  File "/workspace/app/backend/services/vocabulary_words.py", line 93, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:46,764 - core.database - ERROR - Database session error: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 116, in query_vocabulary_wordss
+    result = await service.get_list(
+  File "/workspace/app/backend/services/vocabulary_words.py", line 93, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 129, in query_vocabulary_wordss
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:46,767 - core.database - DEBUG - [DB_OP] Database session cleanup after 2.0809s
+2026-04-22 23:22:46,829 - core.database - ERROR - Failed to create database session: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 116, in query_vocabulary_wordss
+    result = await service.get_list(
+  File "/workspace/app/backend/services/vocabulary_words.py", line 93, in get_list
+    result = await self.db.execute(query.offset(skip).limit(limit))
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 449, in execute
+    result = await greenlet_spawn(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2351, in execute
+    return self._execute_internal(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2249, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 129, in query_vocabulary_wordss
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column vocabulary_words.plural_form does not exist
+[SQL: SELECT vocabulary_words.id, vocabulary_words.user_id, vocabulary_words.german_word, vocabulary_words.plural_form, vocabulary_words.part_of_speech, vocabulary_words.gender, vocabulary_words.russian_translation, vocabulary_words.kazakh_translation, vocabulary_words.example_sentence, vocabulary_words.created_at, vocabulary_words.updated_at 
+FROM vocabulary_words 
+WHERE vocabulary_words.user_id = $1::VARCHAR ORDER BY vocabulary_words.created_at DESC 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER]
+[parameters: ('595041', 500, 0)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:56,285 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-04-22 23:22:56,285 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-04-22 23:22:57,089 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-57e81e18-7194-4cf8-98e6-8204ff5ce969', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Ты — эксперт по немецкому языку. Тебе дают немецкое слово. Верни строго JSON без markdown, без пояснений. Формат:\n{\n  "german_word": "слово в единственном числе в правильной форме (существительные с заглавной буквы и с артиклем der/die/das в начале например \'der Hund\', глаголы в инфинитиве)",\n  "plural_form": "для существительных — форма множественного числа с артиклем \'die\' (например \'die Hunde\'). Для глаголов — основные формы (Präsens, Präteritum, Partizip II), например \'läuft, lief, gelaufen\'. Для прилагательных — формы сравнения (Komparativ, Superlativ), например \'schöner, am schönsten\'. Для остальных частей речи — пустая строка",\n  "part_of_speech": "одно из: Nomen (существительное), Verb (глагол), Adjektiv (прилагательное), Adverb (наречие), Pronomen (местоимение), Präposition (предлог), Konjunktion (союз), Artikel (артикль), Numerale (числительное), Interjektion (междометие)",\n  "gender": "только для существительных: der, die или das. Для других частей речи — пустая строка",\n  "russian_translation": "перевод на русский язык",\n  "kazakh_translation": "перевод на казахский язык",\n  "example_sentence": "2 коротких примера предложений на немецком с этим словом, разделённых символом новой строки"\n}\nОтвечай ТОЛЬКО JSON-объектом.'}, {'role': 'user', 'content': 'Haus'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-04-22 23:22:57,091 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-04-22 23:22:57,091 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-04-22 23:22:57,110 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fe5e6df1450>
+2026-04-22 23:22:57,111 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7fe5ec3af4c0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-04-22 23:22:57,122 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7fe5e6df0d00>
+2026-04-22 23:22:57,122 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-04-22 23:22:57,124 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-04-22 23:22:57,124 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-04-22 23:22:57,124 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-04-22 23:22:57,124 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-04-22 23:22:58,986 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 23 Apr 2026 06:22:58 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Apim-Request-Id', b'58cfd649-ff6a-4cd8-9747-a3db05ab929e'), (b'Azureml-Model-Session', b'd20260415225847-57198428'), (b'Skip-Error-Remapping', b'true'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains; preload'), (b'X-Content-Type-Options', b'nosniff'), (b'X-Ms-Deployment-Name', b'gpt-5.4'), (b'X-Ms-Is-Spilled-Over', b'false'), (b'X-Ms-Rai-Invoked', b'true'), (b'X-Ms-Region', b'East US 2'), (b'X-Oneapi-Request-Id', b'2026042223225715371589859850481'), (b'X-Oneapi-Trans-Id', b'29609399093821784'), (b'X-Ratelimit-Abusepenalty-Active', b'False'), (b'X-Ratelimit-Limit-Requests', b'69990'), (b'X-Ratelimit-Limit-Tokens', b'6999000'), (b'X-Ratelimit-Remaining-Requests', b'69989'), (b'X-Ratelimit-Remaining-Tokens', b'6998627'), (b'X-Ratelimit-Renewalperiod-Requests', b'60'), (b'X-Ratelimit-Renewalperiod-Tokens', b'60'), (b'X-Ratelimit-Reset-Requests', b'0'), (b'X-Ratelimit-Reset-Tokens', b'3'), (b'X-Request-Id', b'91c1609a-1e98-4769-a952-57f79d74f591'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'Server', b'cloudflare'), (b'CF-RAY', b'9f0ac6d7098adcfa-LAX')])
+2026-04-22 23:22:58,987 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-22 23:22:58,988 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-04-22 23:22:58,989 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-04-22 23:22:58,989 - httpcore.http11 - DEBUG - response_closed.started
+2026-04-22 23:22:58,990 - httpcore.http11 - DEBUG - response_closed.complete
+2026-04-22 23:22:58,990 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 23 Apr 2026 06:22:58 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'apim-request-id': '58cfd649-ff6a-4cd8-9747-a3db05ab929e', 'azureml-model-session': 'd20260415225847-57198428', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'x-content-type-options': 'nosniff', 'x-ms-deployment-name': 'gpt-5.4', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'East US 2', 'x-oneapi-request-id': '2026042223225715371589859850481', 'x-oneapi-trans-id': '29609399093821784', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-limit-requests': '69990', 'x-ratelimit-limit-tokens': '6999000', 'x-ratelimit-remaining-requests': '69989', 'x-ratelimit-remaining-tokens': '6998627', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '0', 'x-ratelimit-reset-tokens': '3', 'x-request-id': '91c1609a-1e98-4769-a952-57f79d74f591', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'server': 'cloudflare', 'cf-ray': '9f0ac6d7098adcfa-LAX'})
+2026-04-22 23:22:58,990 - openai._base_client - DEBUG - request_id: 91c1609a-1e98-4769-a952-57f79d74f591
+2026-04-22 23:22:59,393 - core.auth - DEBUG - Authentication token validated for user hash: 0553def2
+2026-04-22 23:22:59,394 - core.database - DEBUG - [DB_OP] Starting get_db session creation
+2026-04-22 23:22:59,394 - core.database - DEBUG - [DB_OP] Database session created successfully in 0.0002s
+2026-04-22 23:22:59,394 - routers.vocabulary_words - DEBUG - Creating new vocabulary_words with data: german_word='das Haus' plural_form='die Häuser' part_of_speech='Nomen' gender='das' russian_translation='дом' kazakh_translation='үй' example_sentence='Das Haus ist groß.\nWir wohnen in einem alten Haus.'
+2026-04-22 23:22:59,833 - services.vocabulary_words - ERROR - Error creating vocabulary_words: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:59,834 - routers.vocabulary_words - ERROR - Error creating vocabulary_words: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 205, in create_vocabulary_words
+    result = await service.create(data.model_dump(), user_id=str(current_user.id))
+  File "/workspace/app/backend/services/vocabulary_words.py", line 26, in create
+    await self.db.commit()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:59,863 - core.database - ERROR - Database session error: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 205, in create_vocabulary_words
+    result = await service.create(data.model_dump(), user_id=str(current_user.id))
+  File "/workspace/app/backend/services/vocabulary_words.py", line 26, in create
+    await self.db.commit()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 216, in create_vocabulary_words
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:22:59,865 - core.database - DEBUG - [DB_OP] Database session cleanup after 0.4718s
+2026-04-22 23:22:59,866 - core.database - ERROR - Failed to create database session: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 526, in _prepare_and_execute
+    prepared_stmt, attributes = await adapt_connection._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 773, in _prepare
+    prepared_stmt = await self._connection.prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 638, in prepare
+    return await self._prepare(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 657, in _prepare
+    stmt = await self._get_statement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/asyncpg/connection.py", line 443, in _get_statement
+    statement = await self._protocol.prepare(
+  File "asyncpg/protocol/protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.ProgrammingError: <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 205, in create_vocabulary_words
+    result = await service.create(data.model_dump(), user_id=str(current_user.id))
+  File "/workspace/app/backend/services/vocabulary_words.py", line 26, in create
+    await self.db.commit()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/ext/asyncio/session.py", line 1000, in commit
+    await greenlet_spawn(self.sync_session.commit)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 203, in greenlet_spawn
+    result = context.switch(value)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 2030, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1311, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/state_changes.py", line 137, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 1286, in _prepare_impl
+    self.session.flush()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4331, in flush
+    self._flush(objects)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4466, in _flush
+    with util.safe_reraise():
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/langhelpers.py", line 121, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/session.py", line 4427, in _flush
+    flush_context.execute()
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/orm/persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1419, in execute
+    return meth(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 585, in execute
+    self._adapt_connection.await_(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 563, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 513, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 797, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.ProgrammingError: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/app/backend/core/database.py", line 553, in get_db
+    yield session
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+  File "/data/chats/aed132c67d834d0e8e52e49a2609bc92/.cache/python/lib/python3.10/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/workspace/app/backend/routers/vocabulary_words.py", line 216, in create_vocabulary_words
+    raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Internal server error: (sqlalchemy.dialects.postgresql.asyncpg.ProgrammingError) <class 'asyncpg.exceptions.UndefinedColumnError'>: column "plural_form" of relation "vocabulary_words" does not exist
+[SQL: INSERT INTO vocabulary_words (user_id, german_word, plural_form, part_of_speech, gender, russian_translation, kazakh_translation, example_sentence, created_at, updated_at) VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::VARCHAR, $6::VARCHAR, $7::VARCHAR, $8::VARCHAR, $9::TIMESTAMP WITH TIME ZONE, $10::TIMESTAMP WITH TIME ZONE) RETURNING vocabulary_words.id]
+[parameters: ('595041', 'das Haus', 'die Häuser', 'Nomen', 'das', 'дом', 'үй', 'Das Haus ist groß.\nWir wohnen in einem alten Haus.', datetime.datetime(2026, 4, 22, 23, 22, 59, 583710), datetime.datetime(2026, 4, 22, 23, 22, 59, 583716))]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-22 23:24:41,336 - services.database - DEBUG - [DB_OP] Starting database close
+2026-04-22 23:24:41,423 - core.database - INFO - Database connection closed and engine disposed
+2026-04-22 23:24:41,423 - services.database - INFO - Database connections closed
+2026-04-22 23:24:41,423 - services.database - DEBUG - [DB_OP] Database close completed in 0.0867s
